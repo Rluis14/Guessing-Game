@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guessing Game</title>
     <script>
+        function playGame() {
         // Generate a random number between 1 and 10
         let randomNumber = Math.floor(Math.random() * 10) + 1;
         let guessCount = 0;
         let guessedCorrectly = false;
 
-        function playGame() {
             while (!guessedCorrectly) {
                 // Display the user for a guess
                 let userGuess = prompt("Guess a number between 1 and 10:");
