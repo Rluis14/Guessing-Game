@@ -12,11 +12,13 @@
         function playGame() {
             while (!guessedCorrectly) {
                 // Display the user for a guess
-                let userGuess = parseInt(prompt("Guess a number between 1 and 10:"), 10);
+                let userGuess = prompt("Guess a number between 1 and 10:");
+                userGuess = userGuess ? userGuess.trim().toLowerCase() : "";
+                let guessNumber = parseInt(userGuess, 10);
                 guessCount++;
 
                 // Check if guess is correct
-                if (userGuess === randomNumber) {
+                if (!isNaN(guessNumber)) {
                     alert(`You guessed it in ${guessCount} guesses!`);
                     guessedCorrectly = true;
                 } else if (userGuess < randomNumber) {
