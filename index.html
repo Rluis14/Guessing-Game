@@ -9,3 +9,30 @@
         let randomNumber = Math.floor(Math.random() * 10) + 1;
         let guessCount = 0;
         let guessedCorrectly = false;
+        function playGame() {
+            while (!guessedCorrectly) {
+                // Display the user for a guess
+                let userGuess = parseInt(prompt("Guess a number between 1 and 10:"), 10);
+                guessCount++;
+
+                // Check if guess is correct
+                if (userGuess === randomNumber) {
+                    alert(`You guessed it in ${guessCount} guesses!`);
+                    guessedCorrectly = true;
+                } else if (userGuess < randomNumber) {
+                    alert("Guess was too low, guess again.");
+                } else if (userGuess > randomNumber) {
+                    alert("Guess was too high, guess again.");
+                } else {
+                    alert("Invalid input, please enter a number between 1 and 10.");
+                }
+            }
+            console.log(`The random number was: ${randomNumber}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Guessing Game!</h1>
+    <button onclick="playGame()">Start Game</button>
+</body>
+</html>
