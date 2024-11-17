@@ -9,6 +9,7 @@
         let randomNumber = Math.floor(Math.random() * 10) + 1;
         let guessCount = 0;
         let guessedCorrectly = false;
+
         function playGame() {
             while (!guessedCorrectly) {
                 // Display the user for a guess
@@ -18,7 +19,8 @@
                 guessCount++;
 
                 // Check if guess is correct
-                if (!isNaN(guessNumber)) {
+            if (!isNaN(guessNumber)) {
+                if (guessNumber === randomNumber){
                     alert(`You guessed it in ${guessCount} guesses!`);
                     guessedCorrectly = true;
                 } else if (userGuess < randomNumber) {
@@ -26,6 +28,9 @@
                 } else if (userGuess > randomNumber) {
                     alert("Guess was too high, guess again.");
                 } else {
+                    alert("Invalid input, please enter a number between 1 and 10.");
+                }
+            } else {
                     alert("Invalid input, please enter a number between 1 and 10.");
                 }
             }
